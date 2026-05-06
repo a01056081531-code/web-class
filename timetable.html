@@ -5,56 +5,73 @@
     <title>2학년 11반 시간표</title>
     <style>
         body {
-            font-family: "맑은 고딕", sans-serif;
-            background-color: #e9e9e9;
+            font-family: "Noto Sans KR", "맑은 고딕", sans-serif;
+            background-color: #f4f5f7;
             text-align: center;
         }
 
         h1 {
             margin: 30px 0;
+            font-weight: 600;
+            color: #333;
         }
 
         table {
             margin: 0 auto;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             width: 90%;
             background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         th, td {
-            border: 2px solid #333;
+            border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
 
         th {
-            background-color: #dcdcdc;
+            background-color: #f1f3f5;
+            font-weight: 600;
+            color: #444;
         }
 
         td {
             height: 80px;
+            font-size: 14px;
         }
 
+        /* 교시 스타일 */
         .period {
-            font-weight: bold;
+            font-weight: 600;
+            color: #333;
         }
 
         .time {
-            font-size: 13px;
-            color: #555;
+            font-size: 12px;
+            color: #777;
         }
 
-        /* 과목별 색상 */
-        .korean { background-color: #ffd1dc; }
-        .math { background-color: #d1e7ff; }
-        .eng { background-color: #d4ffd1; }
-        .prog { background-color: #fff0b3; }
-        .system { background-color: #e0d4ff; }
-        .history { background-color: #ffe4b3; }
-        .art { background-color: #d1fff3; }
-        .pe { background-color: #ffdfba; }
-        .creative { background-color: #f0f0f0; }
-        .self { background-color: #eeeeee; }
+        /* 과목 색상 (부드러운 파스텔톤) */
+        .korean { background-color: #ffe3e3; }
+        .math { background-color: #e3f2ff; }
+        .eng { background-color: #e6ffe3; }
+        .prog { background-color: #fff7d6; }
+        .system { background-color: #eee6ff; }
+        .history { background-color: #fff0d9; }
+        .art { background-color: #e3fff8; }
+        .pe { background-color: #ffe9d6; }
+        .creative { background-color: #f1f3f5; }
+        .self { background-color: #f8f9fa; }
+
+        /* 모서리 둥글게 (각 꼭짓점) */
+        tr:first-child th:first-child { border-top-left-radius: 12px; }
+        tr:first-child th:last-child { border-top-right-radius: 12px; }
+        tr:last-child td:first-child { border-bottom-left-radius: 12px; }
+        tr:last-child td:last-child { border-bottom-right-radius: 12px; }
 
     </style>
 </head>
