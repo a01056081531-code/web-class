@@ -2,126 +2,140 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>시간표</title>
+    <title>2학년 11반 시간표</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
+            font-family: "맑은 고딕", sans-serif;
+            background-color: #e9e9e9;
             text-align: center;
         }
 
         h1 {
-            margin-top: 20px;
+            margin: 30px 0;
         }
 
         table {
-            margin: 20px auto;
+            margin: 0 auto;
             border-collapse: collapse;
-            width: 80%;
+            width: 90%;
             background-color: #ffffff;
         }
 
         th, td {
-            border: 1px solid #ccc;
-            padding: 12px;
+            border: 2px solid #333;
+            padding: 10px;
             text-align: center;
         }
 
         th {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #dcdcdc;
         }
 
         td {
-            height: 60px;
+            height: 80px;
         }
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
+        .period {
+            font-weight: bold;
         }
 
-        tr:hover {
-            background-color: #e6f2ff;
+        .time {
+            font-size: 13px;
+            color: #555;
         }
+
+        /* 과목별 색상 */
+        .korean { background-color: #ffd1dc; }
+        .math { background-color: #d1e7ff; }
+        .eng { background-color: #d4ffd1; }
+        .prog { background-color: #fff0b3; }
+        .system { background-color: #e0d4ff; }
+        .history { background-color: #ffe4b3; }
+        .art { background-color: #d1fff3; }
+        .pe { background-color: #ffdfba; }
+        .creative { background-color: #f0f0f0; }
+        .self { background-color: #eeeeee; }
+
     </style>
 </head>
 <body>
 
-    <h1>나의 시간표</h1>
+<h1>2학년 11반 시간표</h1>
 
-    <table>
-        <tr>
-            <th>교시</th>
-            <th>월요일</th>
-            <th>화요일</th>
-            <th>수요일</th>
-            <th>목요일</th>
-            <th>금요일</th>
-        </tr>
+<table>
+    <tr>
+        <th>교시</th>
+        <th>월</th>
+        <th>화</th>
+        <th>수</th>
+        <th>목</th>
+        <th>금</th>
+    </tr>
 
-        <tr>
-            <td>1교시</td>
-            <td>국어</td>
-            <td>수학</td>
-            <td>영어</td>
-            <td>과학</td>
-            <td>사회</td>
-        </tr>
+    <tr>
+        <td><div class="period">1교시</div><div class="time">09:00 ~ 09:50</div></td>
+        <td class="math">자료<br>구조</td>
+        <td class="system">시스템<br>프로그래밍</td>
+        <td class="system">시스템<br>프로그래밍</td>
+        <td class="prog">응용 프로그래밍<br>개발</td>
+        <td class="pe">스포츠 문화</td>
+    </tr>
 
-        <tr>
-            <td>2교시</td>
-            <td>수학</td>
-            <td>영어</td>
-            <td>과학</td>
-            <td>국어</td>
-            <td>체육</td>
-        </tr>
+    <tr>
+        <td><div class="period">2교시</div><div class="time">10:00 ~ 10:50</div></td>
+        <td class="prog">응용 프로그래밍<br>개발</td>
+        <td class="history">한국사1</td>
+        <td class="art">미술<br>미술실</td>
+        <td class="korean">문학</td>
+        <td class="prog">응용 프로그래밍<br>개발</td>
+    </tr>
 
-        <tr>
-            <td>3교시</td>
-            <td>영어</td>
-            <td>과학</td>
-            <td>국어</td>
-            <td>수학</td>
-            <td>음악</td>
-        </tr>
+    <tr>
+        <td><div class="period">3교시</div><div class="time">11:00 ~ 11:50</div></td>
+        <td class="korean">문학</td>
+        <td class="system">시스템<br>프로그래밍</td>
+        <td class="prog">응용 프로그래밍<br>개발</td>
+        <td class="system">시스템<br>프로그래밍</td>
+        <td class="prog">응용 프로그래밍<br>개발</td>
+    </tr>
 
-        <tr>
-            <td>4교시</td>
-            <td>과학</td>
-            <td>국어</td>
-            <td>수학</td>
-            <td>영어</td>
-            <td>미술</td>
-        </tr>
+    <tr>
+        <td><div class="period">4교시</div><div class="time">12:00 ~ 12:50</div></td>
+        <td class="history">한국사1</td>
+        <td class="prog">응용 프로그래밍<br>개발</td>
+        <td class="prog">응용 프로그래밍<br>개발</td>
+        <td class="system">시스템<br>프로그래밍</td>
+        <td class="korean">문학</td>
+    </tr>
 
-        <tr>
-            <td>5교시</td>
-            <td>사회</td>
-            <td>체육</td>
-            <td>음악</td>
-            <td>미술</td>
-            <td>국어</td>
-        </tr>
+    <tr>
+        <td><div class="period">5교시</div><div class="time">13:50 ~ 14:40</div></td>
+        <td class="system">시스템<br>프로그래밍</td>
+        <td class="eng">영어1</td>
+        <td class="eng">영어1</td>
+        <td class="history">한국사1</td>
+        <td class="creative">창체</td>
+    </tr>
 
-        <tr>
-            <td>6교시</td>
-            <td>체육</td>
-            <td>사회</td>
-            <td>미술</td>
-            <td>음악</td>
-            <td>수학</td>
-        </tr>
+    <tr>
+        <td><div class="period">6교시</div><div class="time">14:50 ~ 15:40</div></td>
+        <td class="system">시스템<br>프로그래밍</td>
+        <td class="art">미술<br>미술실</td>
+        <td class="self">자율</td>
+        <td class="math">자료<br>구조</td>
+        <td class="creative">창체</td>
+    </tr>
 
-        <tr>
-            <td>7교시</td>
-            <td>자습</td>
-            <td>동아리</td>
-            <td>자습</td>
-            <td>동아리</td>
-            <td>자율활동</td>
-        </tr>
-    </table>
+    <tr>
+        <td><div class="period">7교시</div><div class="time">15:50 ~ 16:40</div></td>
+        <td class="system">시스템<br>프로그래밍</td>
+        <td></td>
+        <td></td>
+        <td class="eng">영어1</td>
+        <td></td>
+    </tr>
+
+</table>
 
 </body>
 </html>
