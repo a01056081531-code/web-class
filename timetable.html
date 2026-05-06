@@ -20,7 +20,7 @@
             margin: 0 auto;
             border-collapse: separate;
             border-spacing: 0;
-            width: 90%;
+            width: 92%;
             background-color: #ffffff;
             border-radius: 12px;
             overflow: hidden;
@@ -44,10 +44,8 @@
             font-size: 14px;
         }
 
-        /* 교시 스타일 */
         .period {
             font-weight: 600;
-            color: #333;
         }
 
         .time {
@@ -55,7 +53,7 @@
             color: #777;
         }
 
-        /* 과목 색상 (부드러운 파스텔톤) */
+        /* 과목 색상 */
         .korean { background-color: #ffe3e3; }
         .math { background-color: #e3f2ff; }
         .eng { background-color: #e6ffe3; }
@@ -67,7 +65,13 @@
         .creative { background-color: #f1f3f5; }
         .self { background-color: #f8f9fa; }
 
-        /* 모서리 둥글게 (각 꼭짓점) */
+        /* 점심 */
+        .lunch {
+            background-color: #ffe066;
+            font-weight: bold;
+        }
+
+        /* 모서리 */
         tr:first-child th:first-child { border-top-left-radius: 12px; }
         tr:first-child th:last-child { border-top-right-radius: 12px; }
         tr:last-child td:first-child { border-bottom-left-radius: 12px; }
@@ -89,6 +93,7 @@
         <th>금</th>
     </tr>
 
+    <!-- 1교시 -->
     <tr>
         <td><div class="period">1교시</div><div class="time">09:00 ~ 09:50</div></td>
         <td class="math">자료<br>구조</td>
@@ -98,6 +103,7 @@
         <td class="pe">스포츠 문화</td>
     </tr>
 
+    <!-- 2교시 -->
     <tr>
         <td><div class="period">2교시</div><div class="time">10:00 ~ 10:50</div></td>
         <td class="prog">응용 프로그래밍<br>개발</td>
@@ -107,6 +113,7 @@
         <td class="prog">응용 프로그래밍<br>개발</td>
     </tr>
 
+    <!-- 3교시 -->
     <tr>
         <td><div class="period">3교시</div><div class="time">11:00 ~ 11:50</div></td>
         <td class="korean">문학</td>
@@ -116,6 +123,7 @@
         <td class="prog">응용 프로그래밍<br>개발</td>
     </tr>
 
+    <!-- 4교시 -->
     <tr>
         <td><div class="period">4교시</div><div class="time">12:00 ~ 12:50</div></td>
         <td class="history">한국사1</td>
@@ -124,6 +132,22 @@
         <td class="system">시스템<br>프로그래밍</td>
         <td class="korean">문학</td>
     </tr>
+
+    <!-- 점심 -->
+    <tr>
+        <td class="lunch" rowspan="2">
+            점심시간<br>
+            <span class="time">12:55 ~ 13:45</span>
+        </td>
+        <td class="lunch" rowspan="2">🍽️</td>
+        <td class="lunch" rowspan="2">🍽️</td>
+        <td class="lunch" rowspan="2">🍽️</td>
+        <td class="lunch" rowspan="2">🍽️</td>
+        <td class="lunch" rowspan="2">🍽️</td>
+    </tr>
+
+    <!-- 5교시 -->
+    <tr></tr>
 
     <tr>
         <td><div class="period">5교시</div><div class="time">13:50 ~ 14:40</div></td>
@@ -134,6 +158,7 @@
         <td class="creative">창체</td>
     </tr>
 
+    <!-- 6교시 -->
     <tr>
         <td><div class="period">6교시</div><div class="time">14:50 ~ 15:40</div></td>
         <td class="system">시스템<br>프로그래밍</td>
@@ -143,6 +168,7 @@
         <td class="creative">창체</td>
     </tr>
 
+    <!-- 7교시 -->
     <tr>
         <td><div class="period">7교시</div><div class="time">15:50 ~ 16:40</div></td>
         <td class="system">시스템<br>프로그래밍</td>
