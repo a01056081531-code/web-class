@@ -2,10 +2,126 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>시간표</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #ffffff;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td {
+            height: 60px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e6f2ff;
+        }
+    </style>
 </head>
 <body>
-    <p>곧 제작될 예정</p>
+
+    <h1>나의 시간표</h1>
+
+    <table>
+        <tr>
+            <th>교시</th>
+            <th>월요일</th>
+            <th>화요일</th>
+            <th>수요일</th>
+            <th>목요일</th>
+            <th>금요일</th>
+        </tr>
+
+        <tr>
+            <td>1교시</td>
+            <td>국어</td>
+            <td>수학</td>
+            <td>영어</td>
+            <td>과학</td>
+            <td>사회</td>
+        </tr>
+
+        <tr>
+            <td>2교시</td>
+            <td>수학</td>
+            <td>영어</td>
+            <td>과학</td>
+            <td>국어</td>
+            <td>체육</td>
+        </tr>
+
+        <tr>
+            <td>3교시</td>
+            <td>영어</td>
+            <td>과학</td>
+            <td>국어</td>
+            <td>수학</td>
+            <td>음악</td>
+        </tr>
+
+        <tr>
+            <td>4교시</td>
+            <td>과학</td>
+            <td>국어</td>
+            <td>수학</td>
+            <td>영어</td>
+            <td>미술</td>
+        </tr>
+
+        <tr>
+            <td>5교시</td>
+            <td>사회</td>
+            <td>체육</td>
+            <td>음악</td>
+            <td>미술</td>
+            <td>국어</td>
+        </tr>
+
+        <tr>
+            <td>6교시</td>
+            <td>체육</td>
+            <td>사회</td>
+            <td>미술</td>
+            <td>음악</td>
+            <td>수학</td>
+        </tr>
+
+        <tr>
+            <td>7교시</td>
+            <td>자습</td>
+            <td>동아리</td>
+            <td>자습</td>
+            <td>동아리</td>
+            <td>자율활동</td>
+        </tr>
+    </table>
+
 </body>
 </html>
