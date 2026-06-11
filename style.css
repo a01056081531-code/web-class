@@ -1,14 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Noto+Sans+KR:wght@100..900&display=swap');
 
-
-* {margin: 0; padding: 0; box-sizing: border-box;}
-ul, li {list-style: none;}
-a { text-decoration: none; color: #000;}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+ul, li { list-style: none; }
+a { text-decoration: none; color: #000; }
 
 body {
-    font-family: "Nanum Pen Script", cursive;
-    font-size: 20px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
     background-color: #f0f0f0;
     padding-top: 70px;
 }
@@ -32,33 +30,36 @@ body {
     background-color: #444;
     border-radius: 5px;
     color: #fff;
-    font-width: bold;
-    transition: all 0.6s;;
+    font-weight: bold;
+    transition: all 0.6s;
 }
 #header li a:hover {
     background-color: #2a80ff;
 }
 
-
 /* 메인 구조 */
 #container {
     display: flex;
     max-width: 1000px;
-    margin: 0px auto;
+    margin: 0 auto;
+    padding: 20px;
     gap: 20px;
 }
 
 /* 왼쪽 프로필 */
-profile {
-    width:  35%;
+.profile {
+    width: 35%;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 .profile h1 {
+    font-family: "Dongle", sans-serif;
+    font-size: 32px;
     color: #2a80ff;
     margin-bottom: 10px;
+    text-align: center;
 }
 .profile h2 {
     font-size: 0;
@@ -66,7 +67,7 @@ profile {
     left: -9999px;
 }
 .profile img {
-    width: 100px;
+    width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -79,21 +80,21 @@ profile {
 .profile p::first-letter {
     font-size: 160%;
     color: #ff6600;
-    font-width: bold;
+    font-weight: bold;
 }
 .profile ul li {
     margin: 8px 0;
 }
 
-/* 오른쪼 컨텐츠 */
+/* 오른쪽 컨텐츠 */
 .notice {
     width: 65%;
 }
-.notice .table0-box {
+.notice .table-box {
     background-color: #fff;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 .notice table {
     width: 100%;
@@ -139,4 +140,68 @@ footer {
 }
 address {
     font-style: normal;
+}
+.meal-widget{
+    margin-top:20px;
+}
+
+.clock-container{
+    background:#fff;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 0 8px rgba(0,0,0,0.1);
+    margin-bottom:15px;
+}
+
+.clock-title{
+    font-size:14px;
+    color:#666;
+    margin-bottom:10px;
+}
+
+#digital-clock{
+    font-size:30px;
+    font-weight:bold;
+    color:#2a80ff;
+    letter-spacing:2px;
+}
+
+.meal-container{
+    background:#fff;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 0 8px rgba(0,0,0,0.1);
+}
+
+.main-title{
+    color:#2a80ff;
+    margin-bottom:10px;
+}
+
+#data-display{
+    margin-bottom:10px;
+    color:#666;
+}
+
+#meal-box{
+    background:#f8fafc;
+    border-left:5px solid #2a80ff;
+    padding:15px;
+    border-radius:5px;
+    white-space:pre-wrap;
+    line-height:1.8;
+    font-family:"Noto Sans KR", sans-serif;
+}
+
+@media(max-width:768px){
+
+    #container{
+        flex-direction:column;
+    }
+
+    .profile,
+    .notice{
+        width:100%;
+    }
+
 }
