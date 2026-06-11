@@ -5,9 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>빈진우의 미니홈피</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f2f4f7;
+    font-family:"맑은 고딕", sans-serif;
+    padding:30px;
+    color:#333;
+}
+
+/* ─── 시계 박스 (미니 규격으로 축소) ─── */
+.clock-container{
+    width: 240px;
+    background:white;
+    border:2px solid #000;
+    border-radius:12px;
+    padding:12px 15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.clock-title{
+    color:#666;
+    font-size:0.85rem;
+    margin-bottom:4px;
+    font-weight: bold;
+}
+
+#digital-clock{
+    font-size:1.7rem;
+    font-family:"굴림", Gulim, monospace;
+    font-weight:bold;
+    color:#000;
+    letter-spacing:1px;
+}
+
+/* ─── 급식 카드 (미니홈피 맞춤 슬림화 & 내부 스크롤 적용) ─── */
+.meal-container{
+    max-width: 450px; /* 옆으로 너무 퍼지지 않게 너비 제한 */
+    background:white;
+    border:2px solid #000;
+    border-radius:12px;
+    padding:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+.main-title{
+    color:#2d6cdf;
+    margin-bottom:4px;
+    font-size:1.15rem;
+    font-weight: bold;
+}
+
+#data-display{
+    color:#888;
+    font-size:0.8rem;
+    margin-bottom:10px;
+}
+
+/* 메뉴가 길어져도 소개글 영역을 침범하지 않도록 고정 높이와 스크롤 부여 */
+#meal-box{
+    background:#f8fafc;
+    border-left:4px solid #2d6cdf;
+    padding:12px;
+    border-radius:8px;
+    font-size:0.9rem;
+    line-height:1.6;
+    white-space:pre-wrap;
+    font-family: inherit;
+    max-height: 160px;    /* 급식 박스 최대 높이 고정 */
+    overflow-y: auto;     /* 내용이 넘치면 박스 내부에서만 스크롤 생성 */
+}
+
+.footer{
+    margin-top:8px;
+    color:#aaa;
+    font-size:0.75rem;
+    text-align: right;
+}
+
+/* 모바일 대응 */
+@media(max-width:768px){
+    body{
+        padding:15px;
+    }
+    .clock-container, .meal-container{
+        width:100%;
+        max-width: 100%;
+    }
+}
+
+</style>
+
 </head>
 <body>
-    <!-- 고정 메뉴 -->
+
     <header id="header">
         <ul>
             <li><a href="#">HOME</a></li>
@@ -17,25 +117,22 @@
         </ul>
     </header>
 
-    <!-- 메인 영역 -->
     <div id="container">
-        <!-- 프로필 -->
         <div class="profile">
             <h1>빈진우의 미니홈피</h1>
             <h2>웹개발자</h2>
-            <img src="meing.png" alt="프로필 이미지">
+            <img src="images/profile.png" alt="프로필 이미지">
             <p>
                 안녕하세요? 저는 웹 개발자가 되고 싶은 고등학생입니다.
                 새로운 기술을 배우는 것을 좋아하고 도전하는 것을 즐깁니다.
             </p>
             <ul>
-                <li>📧 이메일: a01056081531@gmail.com</li>
+                <li>📧 이메일: hong@example.com</li>
                 <li>📍 위치: 경기도 광주시</li>
                 <li>💡 관심 분야: 디자인, HTML, CSS, JavaScript</li>
             </ul>
         </div>
 
-        <!-- 공지사항 + 본문 -->
         <div class="notice">
             <div class="table-box">
                 <h3>📢 공지사항</h3>
@@ -71,11 +168,81 @@
                     이를 위해 팀원들과 함께 HTML, CSS 구조를 고민하며 작업 중입니다.
                 </p>
             </div>
+
+            <div class="clock-container">
+                <div class="clock-title">⏱ 현재 시간</div>
+                <div id="digital-clock">00:00:00</div>
+            </div>
+
+            <div class="meal-container">
+                <h1 class="main-title">성일정보고 오늘의 급식</h1>
+                <h3 id="data-display">조회 중...</h3>
+                <pre id="meal-box">급식을 실시간으로 불러오는 중입니다...</pre>
+                <div class="footer">성일정보고등학교 급식 서비스</div>
+            </div>
+
         </div>
     </div>
 
     <footer id="footer">
         <address>&copy; 2026 성일정보고. All rights reserved.</address>
     </footer>
+
+<script>
+/* 시계 기능 */
+const updateClock = () => {
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+
+    if(hours < 10) hours = '0' + hours;
+    if(minutes < 10) minutes = '0' + minutes;
+    if(seconds < 10) seconds = '0' + seconds;
+
+    document.querySelector('#digital-clock').textContent = `${hours}:${minutes}:${seconds}`;
+};
+setInterval(updateClock,1000);
+updateClock();
+
+/* 오늘 날짜 기능 */
+const today = new Date();
+const year = today.getFullYear();
+let month = today.getMonth() + 1;
+if(month < 10){ month = '0' + month; }
+let date = today.getDate();
+if(date < 10){ date = '0' + date; }
+
+const todayString = `${year}${month}${date}`;
+document.querySelector('#data-display').textContent = `조회 날짜 : ${year}년 ${month}월 ${date}일`;
+
+/* 급식 조회 기능 */
+const getTodayMeal = async () => {
+    const myApiKey = "";
+    const officeCode = "J10";
+    const schoolCode = "7530591";
+    const url = `https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=${myApiKey}&Type=json&ATPT_OFCDC_SC_CODE=${officeCode}&SD_SCHUL_CODE=${schoolCode}&MLSV_YMD=${todayString}`;
+
+    try{
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if(data.mealServiceDietInfo){
+            const mealRow = data.mealServiceDietInfo[1].row[0];
+            const menu = mealRow.DDISH_NM.replace(/<br\/>/g,"\n");
+            const calories = mealRow.CAL_INFO;
+
+            document.querySelector('#meal-box').textContent = `${menu}\n\n─────────────────\n🔥 총 칼로리 : ${calories}`;
+        }else{
+            document.querySelector('#meal-box').textContent = `오늘은 등록된 급식 정보가 없습니다.\n\n(주말 또는 공휴일일 수 있습니다.)`;
+        }
+    }catch(error){
+        document.querySelector('#meal-box').textContent = `급식 정보를 불러오지 못했습니다.\n\n인터넷 연결 또는 API KEY를 확인해주세요.`;
+        console.error(error);
+    }
+};
+
+document.addEventListener('DOMContentLoaded', getTodayMeal);
+</script>
 </body>
 </html>
